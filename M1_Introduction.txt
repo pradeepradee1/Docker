@@ -1,0 +1,57 @@
+docker --version
+
+
+docker pull nginx (Images has been pulled)
+
+
+List of Images ?
+
+	docker image ls 
+
+
+https://labs.play-with-docker.com/ (through this site accessing)(WLI)
+
+
+where do i get images ?
+		
+		dockerHub
+
+
+docker --version
+
+
+docker images ls 
+
+
+Container Running  ?
+	docker ps 
+
+All Container Running State ?
+	docker ps -a
+
+All Container ID only ?
+	docker ps -a -q
+
+Pulling the mongo image 
+	docker pull mongo
+
+
+To Create Docker Container ?
+	docker run {container-id}
+
+
+To Create Docker Container Port Mapping ?
+	docker run -p 27017:8080 {Image Id}
+
+Remove Container ?
+	docker rm {container-id}
+
+
+Remove All Container ?
+	docker rm $(docker ps -a -q)
+		where $ = Variable
+
+
+Remove Image ?
+	docker rmi {Image-ID}
+
