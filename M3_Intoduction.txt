@@ -1,0 +1,24 @@
+FROM python:3-alpine
+	where apline is zip file version
+	
+WORKDIR /service	
+	where service is working directory
+
+COPY requirements.txt .
+	copy the file to docker
+
+RUN pip install -r requirements.txt
+	run the command
+
+COPY . ./
+	copy all the corrent working directory to docker corrent working directory
+
+EXPOSE 8082
+	port
+
+ENTRYPOINT [ "python3", "app.py" ]
+	where the app. will start
+
+
+
+docker run -p 8082:8070 hellopython

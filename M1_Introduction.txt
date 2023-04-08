@@ -23,28 +23,38 @@ docker --version
 docker images ls 
 
 
-Container Running  ?
+Active Container Running  ?
 	docker ps 
 
-All Container Running State ?
+Active and Non-Active Container Running State ?
 	docker ps -a
 
-All Container ID only ?
+Active and Non-Active Container ID only ?
 	docker ps -a -q
 
 Pulling the mongo image 
 	docker pull mongo
 
+Pulling the mongo image with version ? 
+	docker pull bitnami/nginx:1.23
 
-To Create Docker Container ?
+
+
+To Create Docker Container from docker image ?
 	docker run {container-id}
 
 
-To Create Docker Container Port Mapping ?
+To Create Docker Container from docker image Port Mapping ?
 	docker run -p 27017:8080 {Image Id}
 
 Remove Container ?
 	docker rm {container-id}
+
+Note : You can't remove the active container and you have to stop and remove
+
+Remove the Acive Container ?
+	docker rm  -f {container-id}
+
 
 
 Remove All Container ?
