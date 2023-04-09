@@ -1,8 +1,9 @@
 FROM python:3-alpine
 	where apline is zip file version
-	
+	docker size will be lesser
+
 WORKDIR /service	
-	where service is working directory
+	where service is working directory we can keep it as any name
 
 COPY requirements.txt .
 	copy the file to docker
@@ -11,6 +12,8 @@ RUN pip install -r requirements.txt
 	run the command
 
 COPY . ./
+	here first . represents the app folder in local
+	here second . represents the app folder in docker
 	copy all the corrent working directory to docker corrent working directory
 
 EXPOSE 8082

@@ -1,0 +1,52 @@
+FROM node:18-alpine
+	
+	node is base image and version is 18
+	alpine version = it is zip format particular image and less size
+
+WORKDIR /app
+	
+	creating working directory as /app
+
+COPY . .
+	
+	first . represets the local app
+	second . represents the docker app
+
+RUN yarn install --production
+	Since pip is pacakge manager for python
+	here yarn is package manager for Node
+
+CMD ["node","src/index.js"]
+	Here index.js is the landing page
+
+EXPOSE 3000
+
+
+How to run docker file ?
+	docker build -t getting-started:latest .
+
+Docker image is created
+
+we can check it in the 
+	docker image ls
+
+Now We have to run the docker iamge
+	docker run -p 3000:3000 a677e4fd959b
+
+We can check in the website (localhost:3000)
+
+If we run docker file again or execute docker build -t getting-started:latest .
+	we will have latest image
+
+
+As like GitHub we can also push it to the DockerHub
+
+Intitall we need to configurations
+	docker tag {directory_name} pradeepkumarasamy/{directory_name}
+
+then check it in docker image ls
+
+docker push pradeepkumarasamy/app
+
+Once Image is pushed in DockerHub and we can run it in the DockerHub
+
