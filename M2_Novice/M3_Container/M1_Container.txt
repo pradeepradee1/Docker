@@ -1,0 +1,21 @@
+How Do I see Active Container Running  ?
+	docker ps 
+
+How Do I see Active and Non-Active Container Running State ?
+	docker ps -a
+
+How Do I see Active and Non-Active Container ID only ?
+	docker ps -a -q
+
+How Do i Remove Container ?
+	docker rm {container-id}
+
+Note : You can't remove the active container and you have to stop and remove
+
+How Do i Remove the Acive Container ?
+	docker rm  -f {container-id}
+
+
+How Do i Remove All Container ?
+	docker rm $(docker ps -a -q)
+		where $ = Variable

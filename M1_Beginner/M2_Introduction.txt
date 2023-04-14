@@ -1,0 +1,19 @@
+Docker :
+		1) Docker is software platform that allows us to build test and deploy the application quickly
+		2) Docker packages whole of the software into standardized unit names as container
+		3) Using docker we can easily deploy and scale our application
+
+DockerFile :
+		Writing all the scripts , dependices , etc
+
+DockerImage:
+		Building the docker file then it will be converted into image
+
+DockerContainer:
+		Run the image It will be converted into container
+
+
+
+How Do i check docker installed version ?
+	docker --version
+

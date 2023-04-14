@@ -1,0 +1,25 @@
+where do i get images ?
+	dockerHub
+
+How Do i pull Imgage ?
+	docker pull nginx
+			(or)
+	docker pull mongo
+			(or)
+	docker pull bitnami/nginx:1.23
+
+How Do i List of Images ?
+	docker image ls 
+
+
+How Do i run Docker Image?
+	docker run {image-id}
+
+How Do i run Docker Image with Port Mapping ?
+	docker run -p 27017:8080 {Image Id}
+
+
+Remove Image ?
+	docker rmi {Image-ID}
+
+
