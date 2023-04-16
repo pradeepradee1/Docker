@@ -18,4 +18,7 @@ How Do i Remove the Acive Container ?
 
 How Do i Remove All Container ?
 	docker rm $(docker ps -a -q)
-		where $ = Variable
+		where 
+				docker ps -a -q 	= 	will give container ID
+				$ 					=   sVariable
+

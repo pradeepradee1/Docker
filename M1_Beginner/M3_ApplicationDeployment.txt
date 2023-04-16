@@ -1,0 +1,13 @@
+History Of Application Deployment :
+
+	1)	Mainframe
+
+	2)	Client-Server
+
+	3)	Three Tier
+
+	4)	Mono Lithic
+
+	5)	Micro-Services
+
+	

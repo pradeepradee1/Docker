@@ -11,6 +11,8 @@ How Do i pull Imgage ?
 How Do i List of Images ?
 	docker image ls 
 
+How Do i List of ImagesID ?
+	docker image ls -q
 
 How Do i run Docker Image?
 	docker run {image-id}
@@ -18,8 +20,34 @@ How Do i run Docker Image?
 How Do i run Docker Image with Port Mapping ?
 	docker run -p 27017:8080 {Image Id}
 
+	Where 
+			8080 is default port (you can view in image description in dockerhub)
+			27017 is new port
 
-Remove Image ?
+	we can check it in the website http://localhost:27017/
+
+
+Types Of Mode (Running an Image)
+	
+	1) Attach Mode
+		docker run --name nginx -p 9001:8080  {Image-ID}	
+	2) Deattach Mode
+		docker run --name nginx -p 9001:8080 -d {Image-ID}	
+		
+
+How Do i Rename image ?
+	docker run --name nginx -p 9001:8080 {Image-ID}
+
+	Where nginx is container name
+
+
+
+How Do i Remove Image ?
 	docker rmi {Image-ID}
 
+How Do i Remove Image with forcefully?
+	docker rmi -f {Image-ID}
+
+How Do i Remove the all the image ?
+	docker rmi $(docker image ls -q)
 
