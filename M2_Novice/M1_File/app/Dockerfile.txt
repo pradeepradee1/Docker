@@ -1,0 +1,59 @@
+FROM python:3-alpine
+	where apline is zip file version
+	docker size will be lesser
+
+WORKDIR /service	
+	where service is working directory we can keep it as any name
+
+COPY requirements.txt .
+	copy the file to docker
+
+RUN pip install -r requirements.txt
+	run the command
+
+COPY . ./
+	here first . represents the app folder in local
+	here second . represents the app folder in docker
+	copy all the corrent working directory to docker corrent working directory
+
+EXPOSE 8082
+	port
+
+ENTRYPOINT [ "python3", "app.py" ]
+	where the app. will start
+
+
+
+
+To ignore the virtual env pipfile 
+	add pipfile in .dockerignore file
+
+
+To convert docker file to docker image
+	
+	docker build -t hellopython:latest .
+
+	where 
+			hellopython is image name
+			latest is the tag
+			. = in which directory Dockerfile is suituted 
+				here . represents the current directory Dockerfile is suituted
+
+	we can check it in the docker image ls
+
+
+Now, i want to run the docker image
+
+
+docker run  hellopython
+	
+	here , If i run this i will get error because we didn't allocate any external port to the container
+			8082 is default port
+
+
+docker run -p 8082:8070 hellopython
+
+then we can check
+
+http://127.0.0.1:8082/
+

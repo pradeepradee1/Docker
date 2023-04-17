@@ -2,4 +2,8 @@ Pipfile
 
 *.lock
 
+envname*
+
+Pipfile*
+
 *checkpoints
