@@ -76,12 +76,11 @@ How Do i push the container to docker-hub repositary ?
 
 
 
-First 
-docker run mysql
+We Need To tun MYSQL image
+    docker run mysql
 
-How To create Network ?
 
-    
+How To create Network ?    
     docker run -d --network todo-app --network-alias mysql -v todo-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=todos mysql:8.0
 
 
@@ -102,5 +101,8 @@ How To create Network ?
         Here , First path is local , second path is container
 
 
-Docker-compose.yml file came To OverCome this complex issuses
 
+How To overcome network complex in docker file ?
+    Docker-compose.yml
+    
+    
