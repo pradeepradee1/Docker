@@ -1,0 +1,106 @@
+Go the getting-started/app directory
+
+then create Dockerfile
+
+since we are creting the Javascript application
+
+From node:18-alphine
+
+    here node is for Javascript
+    alphine is zip format for node and size will lesser if we use alphine in container
+
+WORKDIR /app
+    Here app is working directory 
+
+COPY . .
+    first . represents app in local
+    second . represents app in container
+
+RUN yarn install --production
+
+    pip is manage package directory for python
+    yarn is manage package directory for node 
+
+CMD ["node","src/index.js"]
+
+    src/index.js is landing page for this application (entry point)
+    node is repersents the Javascript file
+
+
+
+How To convert docker file to docker image ? 
+    in the inside the app 
+	docker build -t getting-started:latest .
+
+    where
+    getting-started is image name
+    latest is the tag
+    . = in which directory Dockerfile is suituted 
+    here . represents the current directory Dockerfile is suituted
+
+How To Run container from the image ?
+    docker run -p 3000:3000 getting-started
+
+    we can check it localhost:3000
+
+
+How Do i make any changes in src/index.js in the application ?
+    we need to stop the container and run command again 
+    docker build -t getting-started:latest .
+
+    previous image will be named as none
+
+
+How to run in the Deattach mode ?
+    docker run -dp 3000:3000 getting-started 
+
+
+
+How Do i push the container to docker-hub repositary ?
+    docker push getting-started
+
+    if i do this i will get error , So need to tag the container
+
+    docker tag getting-started pradeep/getting-started 
+
+    docker image ls  
+    we can see that name has been changed pradeep/getting-started
+
+    docker push pradeep/getting-started
+
+    opening the docker play ground (UI app)
+    
+    we execute the docker run -dp 3000:3000 getting-started 
+
+
+
+
+
+First 
+docker run mysql
+
+How To create Network ?
+
+    
+    docker run -d --network todo-app --network-alias mysql -v todo-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=todos mysql:8.0
+
+
+    After this MYSQL container will up
+
+    to go inside the MYSQL container
+
+    docker exec -it {container-id} mysql -u root -p password
+    
+    
+    docker run -it --network todo-app nicolaka/netshoot
+
+    docker run -dp 3000:3000 -w /app -v "$(pwd):/app" --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos node:18-alpine sh -c "yarn install && yarn run dev" 
+
+
+    -v path : path
+
+        Here , First path is local , second path is container
+
+
+Docker-compose.yml file came To OverCome this complex issuses
+
