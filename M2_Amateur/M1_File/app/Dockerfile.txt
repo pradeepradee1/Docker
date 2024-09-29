@@ -35,6 +35,11 @@ How To convert docker file to docker image ?
 	where
 		docker build:		This is the Docker command to build an image from a Dockerfile.
 		-t hellopython:latest:	The -t (tag) option names and tags the resulting Docker image.
+
+			for ex:
+					Multiple Tagging : docker build -t myapp:1.0 -t myapp:stable .
+					Default Tagging  : docker build -t myapp .
+
 		hellopython: 		The name of the Docker image.
 		latest: 		The tag assigned to this image, which is a label indicating the version of the image. "latest" is a common tag used to 						indicate the most recent version.
 		. (dot): 		Specifies the build context, indicating that Docker should use the current directory (where the Dockerfile is located) to 					find the files needed to build the image.
